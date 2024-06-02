@@ -24,7 +24,7 @@ const UserForm = () => {
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:5000/api/users/${id}`)
+      axios.get(`https://marbles-health-fullstack-assignment.onrender.com/api/users/${id}`)
         .then(response => {
           const user = response.data;
           setValue('name', user.name);
@@ -40,9 +40,9 @@ const UserForm = () => {
   const onSubmit = async (data) => {
     try {
       if (id) {
-        await axios.put(`http://localhost:5000/api/users/${id}`, data);
+        await axios.put(`https://marbles-health-fullstack-assignment.onrender.com/api/users/${id}`, data);
       } else {
-        await axios.post('http://localhost:5000/api/users', data);
+        await axios.post('https://marbles-health-fullstack-assignment.onrender.com/api/users', data);
       }
       reset();
       navigate('/');

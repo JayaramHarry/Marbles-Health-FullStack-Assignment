@@ -18,7 +18,7 @@ const UserList = ({ search }) => {
     setLoading(true);
     try {
       const limitPerPage = 3; // Number of users per page
-      const response = await axios.get(`http://localhost:5000/api/users`, {
+      const response = await axios.get(`https://marbles-health-fullstack-assignment.onrender.com/api/users`, {
         params: { page, limit: limitPerPage, search }
       });
       const sortedUsers = response.data.users.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));

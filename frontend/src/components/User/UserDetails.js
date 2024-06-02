@@ -15,7 +15,7 @@ const UserDetail = () => {
   const fetchUser = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:5000/api/users/${id}`);
+      const response = await axios.get(`https://marbles-health-fullstack-assignment.onrender.com/api/users/${id}`);
       setUser(response.data);
       setLoading(false);
     } catch (error) {
@@ -30,7 +30,7 @@ const UserDetail = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/users/${id}`);
+      await axios.delete(`https://marbles-health-fullstack-assignment.onrender.com/api/users/${id}`);
       navigate('/');
     } catch (error) {
       console.error(error);
